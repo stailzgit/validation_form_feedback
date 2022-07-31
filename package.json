@@ -1,5 +1,6 @@
 {
   "name": "validation_ts",
+  "homepage": "https://stailzgit.github.io/validation_form_feedback",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
