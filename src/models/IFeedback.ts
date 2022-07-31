@@ -1,4 +1,5 @@
 import { IValidations } from "../HOOKS/useValidation";
+
 export type IFeedback = {
   name: IFeedbackField;
   email: IFeedbackField;

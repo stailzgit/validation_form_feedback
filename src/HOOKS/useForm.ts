@@ -39,9 +39,6 @@ export const useForm = (initialState: IFeedback): IUseForm<IFeedback> => {
     const localIsFormError = Object.values(form).some((field) => field.errorMessage !== "");
     //Есть ли пустое поле
     const isEmptyFields = Object.values(form).some((field) => field.value === "");
-    console.log("form", { ...form });
-    console.log("isEmptyFields", isEmptyFields);
-    console.log("localIsFormError", localIsFormError);
 
     setIsFormError(localIsFormError || isEmptyFields);
   }, [form]);

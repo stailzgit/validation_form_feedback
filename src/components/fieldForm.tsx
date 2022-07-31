@@ -1,5 +1,4 @@
-import { useEffect, useState, memo, ChangeEvent, Dispatch, SetStateAction, FocusEventHandler } from "react";
-import { useValidation, IValidations } from "../HOOKS/useValidation";
+import { useState, memo } from "react";
 
 type FieldFormProps = {
   type?: string;
@@ -11,16 +10,11 @@ type FieldFormProps = {
 const FieldForm = (props: FieldFormProps) => {
   const { type, value, error, ...inputProps } = props;
 
-  // const { mainError } = useValidation(value, validations);
   const [isDirty, setDirty] = useState(false);
 
   const onBlur = () => {
     setDirty(true);
   };
-
-  // useEffect(() => {
-  //   setIsError(mainError);
-  // }, [mainError]);
 
   return (
     <>
