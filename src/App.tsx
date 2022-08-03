@@ -69,7 +69,7 @@ function App() {
           type="phone"
           value={phone.value}
           error={phone.errorMessage}
-          placeholder="Your phone +7..."
+          placeholder="Your phone +7(000)0000000"
           onChange={onChange}
         />
 
@@ -78,7 +78,7 @@ function App() {
           name="dateOfBirth"
           error={dateOfBirth.errorMessage}
           value={dateOfBirth.value}
-          placeholder="Your date of birth"
+          placeholder="Your date of birth dd.mm.yyyy"
           onChange={onChange}
         />
         <FieldForm
