@@ -3,13 +3,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 200px;
   height: 100vh;
+  padding: 0 12px;
 }
 
-.App>form {
-  min-width: 500px;
+.form {
+  margin: 0 auto;
+  width: 500px;
+  min-width: 300px;
   min-height: 200px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 20px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   display: flex;
@@ -22,32 +26,34 @@
   text-transform: uppercase;
 }
 
-.App>form>input,
-.App>form>textarea {
-  width: 300px;
-  height: 25px;
+.form__field-wrap {
+  margin-top: 20px;
+
+  width: 100%;
+  width: clamp(300px, 90%, 600px);
+}
+
+.form__field {
+  width: 100%;
+  height: 40px;
   font-size: 13px;
   padding: 6px 0 4px 10px;
   border: 2px solid #6183f1;
-  background: #F6F6f6;
+  background: transparent;
   border-radius: 15px;
-  margin-top: 20px;
 }
 
-
-.App>form>textarea {
+.form__field.form__message {
   max-height: 300px;
   min-height: 150px;
   resize: vertical;
 }
 
-
-.App>form>input:focus,
-.App>form>textarea:focus {
+.form__field:focus {
   outline: none;
 }
 
-.App>form>input:active {
+.form__field:active {
   outline: none;
 }
 
@@ -96,4 +102,31 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.field-error {
+  margin-top: -5px;
+  margin-left: auto;
+  width: fit-content;
+  border-radius: 9px;
+  font-size: 16px;
+  transform: translateY(9px);
+  transition: all 0.3s ease-in-out;
+  background: var(--danger);
+  color: white;
+  padding: 5px 10px;
+}
+
+.field-error::after {
+  content: " ";
+  width: 0;
+  height: 0;
+
+  border-style: solid;
+  border-width: 6px 6.5px 0 6.5px;
+  border-color: var(--danger) transparent transparent transparent;
+  position: absolute;
+  left: 10%;
+  transform: translateY(-10px) rotateX(180deg);
+
 }

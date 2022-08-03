@@ -8,7 +8,9 @@ type FieldFormProps = {
 };
 
 const FieldForm = (props: FieldFormProps) => {
-  const { type, value, error, ...inputProps } = props;
+  const { type, value, error, className, ...fieldProps } = props;
+
+  const fieldClass = "form__field " + className;
 
   const [isDirty, setDirty] = useState(false);
 
@@ -17,15 +19,14 @@ const FieldForm = (props: FieldFormProps) => {
   };
 
   return (
-    <>
+    <div className="form__field-wrap">
       {type === "textarea" ? (
-        <textarea value={value} onBlur={onBlur} {...inputProps} />
+        <textarea className={fieldClass} value={value} onBlur={onBlur} {...fieldProps} />
       ) : (
-        <input value={value} onBlur={onBlur} type={type ?? "text"} {...inputProps} />
+        <input className={fieldClass} value={value} onBlur={onBlur} type={type ?? "text"} {...fieldProps} />
       )}
-
-      {isDirty && error && <div style={{ color: "red" }}>{error}</div>}
-    </>
+      {isDirty && error && <div className="field-error">{error}</div>}
+    </div>
   );
 };
 

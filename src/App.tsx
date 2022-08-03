@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      <form id="form" onSubmit={sentFeedback}>
+      <form className="form" id="form" onSubmit={sentFeedback}>
         <h1>Feedback form</h1>
 
         <FieldForm
@@ -86,6 +86,7 @@ function App() {
           name="message"
           value={message.value}
           error={message.errorMessage}
+          className="form__message"
           placeholder="Your message"
           onChange={onChange}
         />
