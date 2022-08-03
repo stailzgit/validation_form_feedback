@@ -29,7 +29,6 @@ function App() {
     const { status, message } = await FeedbackService.sentFeedback(form);
     if (status === "success") {
       setSuccessFeedback(message);
-    } else if (status === "error") {
     }
 
     setTimeout(() => {
@@ -47,14 +46,14 @@ function App() {
   return (
     <div className="App">
       <form className="form" id="form" onSubmit={sentFeedback}>
-        <h1>Feedback form</h1>
+        <h1 className="form__title">Feedback form</h1>
 
         <FieldForm
           name="name"
           value={name.value}
           error={name.errorMessage}
           placeholder="Your name surname"
-          className="form__name"
+          className="field-name"
           onChange={onChange}
         />
         <FieldForm
@@ -86,7 +85,7 @@ function App() {
           name="message"
           value={message.value}
           error={message.errorMessage}
-          className="form__message"
+          className="field-message"
           placeholder="Your message"
           onChange={onChange}
         />
@@ -99,8 +98,8 @@ function App() {
           </button>
         )}
 
-        {sentError && !isSentLoading && <div style={{ color: "red", fontWeight: 700 }}>{sentError}</div>}
-        {successFeedback && <div style={{ color: "green", fontWeight: 700 }}>{successFeedback}</div>}
+        {sentError && !isSentLoading && <div className="form__message message-error">{sentError}</div>}
+        {successFeedback && <div className="form__message message-success">{successFeedback}</div>}
       </form>
     </div>
   );

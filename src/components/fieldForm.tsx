@@ -25,7 +25,7 @@ const FieldForm = (props: FieldFormProps) => {
       ) : (
         <input className={fieldClass} value={value} onBlur={onBlur} type={type ?? "text"} {...fieldProps} />
       )}
-      {isDirty && error && <div className="field-error">{error}</div>}
+      {isDirty && error && <div className="error-message">{error}</div>}
     </div>
   );
 };

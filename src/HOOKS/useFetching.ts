@@ -8,6 +8,7 @@ export const useFetching = (callback: IFormFetchingCallback) => {
   const [error, setError] = useState("");
 
   const fetching = async (form: IFeedback) => {
+    setError("");
     setIsLoading(true);
     setTimeout(async () => {
       try {
